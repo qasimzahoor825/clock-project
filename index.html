@@ -1,0 +1,403 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Clock</title>
+
+</head>
+
+<style>
+
+    body {
+
+        margin: 0%;
+
+        padding: 0%;
+
+        height: 100vh;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        align-items: center;
+
+        background-color: rgba(0, 0, 0, 0.87);
+
+    }
+
+    header {
+
+        background: linear-gradient(260deg, #ff596f, #74eaff, #f32cd8, #efb0ffea);
+
+        -webkit-background-clip: text;
+
+        -webkit-text-fill-color: transparent;
+
+        letter-spacing: 0.5px;
+
+        font-size: 20px;
+
+        position: absolute;
+
+        top: 4%;
+
+        left: 5.5%;
+
+        width: 450px;
+
+    }
+
+    .emptybox {
+
+        width: 350px;
+
+        height: 350px;
+
+        background-color: rgba(128, 128, 128, 0.288);
+
+        box-shadow: inset 0px 0px 100px rgb(0, 0, 0);
+
+        border-radius: 50%;
+
+        position: absolute;
+
+        top: 30%;
+
+        left: 30%;
+
+        z-index: -1;
+
+    }
+
+    .circle span {
+
+        position: absolute;
+
+        color: rgb(0, 255, 255);
+
+        font-size: 20px;
+
+        font-weight: bold;
+
+        transform: translate(-50%, -50%);
+
+        margin-top: 16px;
+
+        margin-left: 14px;
+
+    }
+
+    .n12 {
+
+        top: 10px;
+
+        left: 160px;
+
+    }
+
+    .n1 {
+
+        top: 35px;
+
+        left: 230px;
+
+    }
+
+    .n2 {
+
+        top: 95px;
+
+        left: 275px;
+
+    }
+
+    .n3 {
+
+        top: 160px;
+
+        left: 290px;
+
+    }
+
+    .n4 {
+
+        top: 225px;
+
+        left: 275px;
+
+    }
+
+    .n5 {
+
+        top: 285px;
+
+        left: 230px;
+
+    }
+
+    .n6 {
+
+        top: 310px;
+
+        left: 160px;
+
+    }
+
+    .n7 {
+
+        top: 285px;
+
+        left: 90px;
+
+    }
+
+    .n8 {
+
+        top: 225px;
+
+        left: 45px;
+
+    }
+
+    .n9 {
+
+        top: 160px;
+
+        left: 30px;
+
+    }
+
+    .n10 {
+
+        top: 95px;
+
+        left: 45px;
+
+    }
+
+    .n11 {
+
+        top: 35px;
+
+        left: 90px;
+
+    }
+
+    .dot {
+
+        width: 4px;
+
+        background-color: transparent;
+
+        position: absolute;
+
+        top: 48%;
+
+        left: 47%;
+
+        border-radius: 50%;
+
+        border: 1.5px solid aqua;
+
+        height: 4px;
+
+    }
+
+    .secline {
+
+        width: 100px;
+
+        background-color: transparent;
+
+        position: absolute;
+
+        top: 48.4%;
+
+        left: 47.4%;
+
+        border-top-right-radius: 50%;
+
+        border-bottom-right-radius: 50%;
+
+        border: 1.5px solid #f32cd8;
+
+        height: 1px;
+
+        transform-origin: left center;
+
+        animation: rotateSec 60s linear infinite;
+
+    }
+
+    @keyframes rotateSec {
+
+        from {
+
+            transform: rotate(0deg);
+
+        }
+
+        to {
+
+            transform: rotate(360deg);
+
+        }
+
+    }
+
+    .minline {
+
+        width: 70px;
+
+        background-color: transparent;
+
+        position: absolute;
+
+        top: 48.4%;
+
+        left: 47.4%;
+
+        border-top-right-radius: 50%;
+
+        border-bottom-right-radius: 50%;
+
+        border: 1.5px solid #f32c2c;
+
+        height: 1.2px;
+
+        transform-origin: left center;
+
+        animation: rotateMin 3600s linear infinite;
+
+    }
+
+    @keyframes rotateMin {
+
+        from {
+
+            transform: rotate(0deg);
+
+        }
+
+        to {
+
+            transform: rotate(360deg);
+
+        }
+
+    }
+
+    .hourline {
+
+        width: 40px;
+
+        background-color: transparent;
+
+        position: absolute;
+
+        top: 48.4%;
+
+        left: 47.4%;
+
+        border-top-right-radius: 50%;
+
+        border-bottom-right-radius: 50%;
+
+        border: 1.5px solid #49eaff;
+
+        height: 1.4px;
+
+        transform-origin: left center;
+
+        animation: rotateHour 43200s linear infinite;
+
+    }
+
+    @keyframes rotateHour {
+
+        from {
+
+            transform: rotate(0deg);
+
+        }
+
+        to {
+
+            transform: rotate(360deg);
+
+        }
+
+    }
+
+</style>
+
+<body>
+
+    <header>Clock Using HTML and CSS</header>
+
+    <main>
+
+        <div class="emptybox">
+
+            <div class="circle">
+
+                <span class="n1">1</span>
+
+                <span class="n2">2</span>
+
+                <span class="n3">3</span>
+
+                <span class="n4">4</span>
+
+                <span class="n5">5</span>
+
+                <span class="n6">6</span>
+
+                <span class="n7">7</span>
+
+                <span class="n8">8</span>
+
+                <span class="n9">9</span>
+
+                <span class="n10">10</span>
+
+                <span class="n11">11</span>
+
+                <span class="n12">12</span>
+
+                <div class="dot">
+
+                </div>
+
+                <div class="secline">
+
+                </div>
+
+                <div class="minline">
+
+                </div>
+
+                <div class="hourline">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
